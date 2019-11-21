@@ -17,7 +17,7 @@ jobs:
           name: Creating Build Files
           command: 'bash scripts/compile.sh && bash scripts/test.sh'
       - codecov/upload:
-          file: {{ coverage_report_filepath }}
+          file: '.'
 
 workflows:
   version: 2
