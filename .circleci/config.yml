@@ -1,4 +1,6 @@
 version: 2
+orbs:
+  codecov: codecov/codecov@1.0.2
 jobs:
   build:
     docker:
@@ -14,6 +16,9 @@ jobs:
       - run:
           name: Creating Build Files
           command: 'bash scripts/compile.sh && bash scripts/test.sh'
+    steps:
+      - codecov/upload:
+          file: ''
 
 workflows:
   version: 2
